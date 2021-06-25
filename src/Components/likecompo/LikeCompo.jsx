@@ -318,7 +318,7 @@ const LikeCompo = () => {
                 </div>
                 </section>   
 
-            <h2 className ="text-center">THANKS FOR PLAYING</h2>
+            <h2 className ="text-center">THANKS FOR BEING HONEST. IF YOU WERENT, REFRESH AND TRY AGAIN.</h2>
             
             
                      

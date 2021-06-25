@@ -1,0 +1,73 @@
+
+
+.everything {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif !important;
+    padding:3rem;
+    overflow-x: hidden !important;
+    
+    
+}
+
+
+.like_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0rem 2rem 0rem;
+
+
+}
+
+.red {
+    color:red;
+}
+
+.green {
+    color:green;
+}
+
+.thumbnail {
+    padding:1rem;
+    margin: 3rem;
+    text-align: center;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+   
+}
+
+.True-btn {
+    color:black; 
+    font-weight: bold;
+    background-color:tomato;
+    border: none;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    
+}
+
+.True-btn:hover {
+    background-color:tomato !important;
+    color:white !important; 
+    
+    
+}
+
+.False-btn {
+    color:black;
+    background-color: grey;
+    font-weight:bold !important;
+    border: none;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+}
+
+.False-btn:hover {
+    color:white;
+    background-color: grey;
+    
+}
+
+.Images {
+    width:30%;
+}

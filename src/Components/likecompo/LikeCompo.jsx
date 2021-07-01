@@ -398,7 +398,7 @@ const LikeCompo = () => {
 
                 
              
-               <a href = "https://www.linkedin.com/in/randy-davoh-820642171/" className =" text-center fab fa-linkedin"> Built in React by Randy Davoh.</a>
+               <a href = "https://www.linkedin.com/in/randy-davoh-820642171/" className =" footer-link text-center fab fa-linkedin"> Built in React by Randy Davoh.</a>
 
 
             

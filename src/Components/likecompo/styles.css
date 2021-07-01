@@ -87,9 +87,10 @@ h3, h1 {
     font-weight: bold;
 }
 
-
-@media screen and (min-width:768px) {
-
-
+.footer-link {
+    text-decoration: underline;
+    font-size: 1.5rem;
 }
+
+
 

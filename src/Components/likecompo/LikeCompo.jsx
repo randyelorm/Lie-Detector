@@ -393,10 +393,12 @@ const LikeCompo = () => {
                 </div>
                 <h1 className ="text-center">YOUR FINAL IS SCORE: {score}/7</h1>
                 <h2 className = "text-center">REFRESH TO RESTART</h2>
+
                 </section>   
 
                 
-               
+             
+               <a href = "https://www.linkedin.com/in/randy-davoh-820642171/" className =" text-center fab fa-linkedin"> Built in React by Randy Davoh.</a>
 
 
             

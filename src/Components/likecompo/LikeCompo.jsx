@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+
+
+
 import "./styles.css"
 import Image1 from "../../Images/html.png"
 import Image2 from "../../Images/baby.jpeg"
@@ -21,6 +24,14 @@ const LikeCompo = () => {
 
 
    const [score, setScore] = useState (0)
+
+   const[firstdisabled, setFirstDisabled] = useState(false)
+   const[seconddisabled, setSecondDisabled] = useState(false)
+   const[thirddisabled, setThirdDisabled] = useState(false)
+   const[fourthdisabled, setFourthDisabled] = useState(false)
+   const[fifthdisabled, setFifthDisabled] = useState(false)
+   const[sixthdisabled, setSixthDisabled] = useState(false)
+   const[seventhdisabled, setSeventhDisabled] = useState(false)
  
 
 
@@ -54,6 +65,7 @@ const LikeCompo = () => {
    const [Correct7, setCorrectHack] = useState(" ")
 
 
+  
    
 
             // Truth1
@@ -64,6 +76,9 @@ const LikeCompo = () => {
             setWrong(" ")
             event.preventDefault();
             setScore (score + 1)
+            setFirstDisabled (true)
+            
+            
    }
 
         // Truth2
@@ -74,6 +89,9 @@ const LikeCompo = () => {
     setWrongFace(" ")
     event.preventDefault();
     setScore (score + 1)
+    setSecondDisabled (true)
+
+    
 
 }
 
@@ -84,7 +102,9 @@ const LikeCompo = () => {
             setCorrectCSS("I LIKE YOU!!!")
             setWrongCSS("")
             setScore (score + 1)
-            event.preventDefault();
+            setThirdDisabled (true)
+
+           
         }
 
 
@@ -96,17 +116,19 @@ const LikeCompo = () => {
             setFourthColor(correctColor)
             setScore (score + 1)
             event.preventDefault();
+            setFourthDisabled (true)
       }
 
 
         // Truth 5
 
         const truthFunction5 = (event) =>{
-            setCorrectStack("Of Course we all do.")
+            setCorrectStack("Imagine life without uncle Stack")
             setWrongStack (" ")
             setFifthColor(correctColor)
             setScore (score + 1)
             event.preventDefault();
+            setFifthDisabled (true)
       }
 
 
@@ -118,6 +140,7 @@ const LikeCompo = () => {
             setScore (score + 1)
             setSixthColor(correctColor)
             event.preventDefault();
+            setSixthDisabled (true)
       }
 
 
@@ -128,7 +151,7 @@ const LikeCompo = () => {
             setWrongHack("")
             setSeventhColor(correctColor)
             setScore (score + 1)
-           
+            setSeventhDisabled (true)
             event.preventDefault();
       }
 
@@ -145,6 +168,7 @@ const LikeCompo = () => {
             setCorrect (" ")
             setScore (score - 1)
             event.preventDefault(); 
+            setFirstDisabled (true)
 
         
         }
@@ -156,6 +180,7 @@ const LikeCompo = () => {
             setCorrectFace ("")
             setScore (score - 1)
             event.preventDefault(); 
+            setSecondDisabled (true)
 
         
         }
@@ -167,6 +192,7 @@ const LikeCompo = () => {
             setCorrectCSS(" ")
             setScore (score - 1)
             event.preventDefault(); 
+            setThirdDisabled (true)
 
         
         }
@@ -179,6 +205,7 @@ const LikeCompo = () => {
             setCorrectChelsea(" ")
             setScore (score - 1)
             event.preventDefault(); 
+            setFourthDisabled (true)
 
         
         }
@@ -186,11 +213,12 @@ const LikeCompo = () => {
 
           // wrong5
           const WrongFunction5 = (event) =>{
-            setFourthColor(WrongColor)
-            setWrongStack("")
+            setFifthColor(WrongColor)
+            setWrongStack("A big liar just clicked this button.")
             setCorrectStack(" ")
             
-            event.preventDefault(); 
+            event.preventDefault();
+            setFifthDisabled (true) 
 
         
         }
@@ -202,6 +230,7 @@ const LikeCompo = () => {
             setCorrectSolve(" ")
             setScore (score - 1)
             event.preventDefault(); 
+            setSixthDisabled (true)
 
         
         }
@@ -213,12 +242,12 @@ const LikeCompo = () => {
             setCorrectHack(" ")
             setScore (score - 1)
             event.preventDefault(); 
+            setSeventhDisabled (true)
 
         
         }
 
 
-        
 
 
 
@@ -227,16 +256,18 @@ const LikeCompo = () => {
     <div className ="everything"  >
 
             <h1 class ="text-center">HELLO DEVELOPER, WELCOME</h1>
-                    <h2 class ="text-center">I DETECT LIES TOLD BY MOST DEVELOPERS.</h2>
-           <h3 className ="text-center">I will change the background color to <span className ="green">GREEN</span>  when you answer correctly and to <span className ="red">RED</span> when you answer wrongly. Good Luck</h3>
+                    <h2 class ="text-center">I DETECT <span style ={{color:"red"}}>LIES</span>  TOLD BY MOST DEVELOPERS.</h2>
+           <h3 className ="text-center">I will change the background color to <span className ="green">GREEN</span> and add 1 (+1) to your score when you answer correctly. </h3> 
+           <h3 className ="text-center"> and I will change the background color to <span className ="red">RED</span> and minus 1 (-1) from your score when you answer wrongly. Good Luck</h3>
            <p className ="text-center">Refresh to Reset the page</p>
 
         <section className= "like_box">
                         {/* Thumbnail 1 */}
                     <div className="row">
                     <div className="">
+                        
                         <div className="thumbnail" style= {{ backgroundColor: firstcolor }}>
-                     
+                        <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                         <img src={Image1} className = "Images img-responsive" alt="..."/>
                         <div className="caption">
                             <h3 > 
@@ -247,7 +278,7 @@ const LikeCompo = () => {
 
                            
                            
-                            <p><a href="#" className="btn btn-primary True-btn" role="button" onClick={truthFunction1}> TRUE </a> <a href="#" className="btn btn-default False-btn" role="button" onClick={WrongFunction1}>FALSE</a></p>
+                            <button className="btn btn-primary True-btn" role="button" onClick={truthFunction1} disabled ={firstdisabled} > TRUE </button> <button className="btn btn-default False-btn" role="button" onClick={WrongFunction1} disabled ={firstdisabled} >FALSE</button>
                             <h1 className ="text-center" style ={{color:"white"}}>{Correct}</h1>
                             <h1 className ="text-center" style ={{color:"white"}}>{wrong}</h1>
                         </div>
@@ -259,12 +290,12 @@ const LikeCompo = () => {
                 <div className="row">
                     <div className="">
                         <div className="thumbnail" style= {{ backgroundColor: secondcolor }} >
-                       
+                        <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                         <img src={Image2} className ="Images" alt="..."/>
                         <div className="caption">
-                            <h3> Question 2: This was your face 90% of the time when you were first learning to code</h3>
+                            <h3> Question 2: This was your face 90% of the time when you were first learning to code.</h3>
                             <h4>Hint: Honesty is Key to getting this question right.</h4>
-                            <p><a href="#" className="btn btn- True-btn" role="button" onClick={truthFunction2}>TRUE</a> <a href="#" className="btn btn-default False-btn" role="button"onClick={WrongFunction2}>FALSE</a></p>
+                            <button className="btn btn- True-btn" role="button" onClick={truthFunction2} disabled ={seconddisabled} >TRUE</button> <button href="#" className="btn btn-default False-btn" role="button"onClick={WrongFunction2} disabled ={seconddisabled} >FALSE</button>
                             <h1 className ="text-center" style ={{color:"white"}}>{Correct2} </h1>
                             <h1 className ="text-center" style ={{color:"white"}}>{wrong2}</h1>
                         </div>
@@ -276,12 +307,12 @@ const LikeCompo = () => {
             <div className="row">
                 <div className="">
                     <div className="thumbnail" style= {{ backgroundColor: thirdcolor }}>
-                    
+                    <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                     <img src= {Image3} className ="Images" alt="..."/>
                     <div className="caption">
                         <h3>Question 3: CSS is fun, easy to understand and loved by every programmer including you.</h3>
                         <h4>Hint: Again, Please dont lie</h4>
-                        <p><a href="#" className="btn btn- True-btn" role="button" onClick={WrongFunction3}>TRUE</a> <a href="#" className="btn btn-default False-btn" role="button" onClick={truthFunction3}>FALSE</a></p>
+                        <button href="#" className="btn btn- True-btn" role="button" onClick={WrongFunction3} disabled ={thirddisabled} >TRUE</button> <button className="btn btn-default False-btn" role="button" onClick={truthFunction3} disabled ={thirddisabled} >FALSE </button>
                         <h1 className ="text-center" style ={{color:"white"}}   >{Correct3}</h1>
                         <h1 className ="text-center" style ={{color:"white"}}> {wrong3}  </h1>
                     </div>
@@ -293,12 +324,12 @@ const LikeCompo = () => {
                 <div className="row">
                 <div className="">
                     <div className="thumbnail" style= {{ backgroundColor: fourthcolor }}>
-           
+                    <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                     <img src={Image4} className ="Images"alt="..."/>
                     <div className="caption">
                         <h3>Question 4: You watch an inidan on Youtube at least a month.</h3>
                       
-                        <p><a href="#" className="btn btn- True-btn" role="button"  onClick={truthFunction4}>TRUE</a> <a href="#" className="btn btn-default False-btn" role="button" onClick={WrongFunction4}>NEVER</a></p>
+                        <button className="btn btn- True-btn" role="button"  onClick={truthFunction4} disabled ={fourthdisabled} >TRUE</button> <button href="#" className="btn btn-default False-btn" role="button" onClick={WrongFunction4} disabled ={fourthdisabled} >NEVER</button>
                         <h1 className ="text-center" style ={{color:"white"}}>{Correct4}</h1>
                         <h1 className ="text-center" style ={{color:"white"}}> {wrong4}  </h1>
                     </div>
@@ -311,12 +342,12 @@ const LikeCompo = () => {
                 <div className="row">
                 <div className="">
                     <div className="thumbnail" style= {{ backgroundColor: fifthcolor }}>
-           
+                    <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                     <img src={Image5} className= "Images"/>
                     <div className="caption">
-                        <h3> Question 5: You copy code you dont understand from stackoverflow to make your code work</h3>
-                        <h4>Hint:The lying button doesn't work on this question. </h4>
-                        <p><a href="#" className="btn btn- True-btn" role="button" onClick={truthFunction5}>AUTOMATICALLY TRUE</a> <a href="#" className="btn btn-default False-btn" role="button" onClick ={WrongFunction5}>LIARS SHOULD CLICK THIS</a></p>
+                        <h3> Question 5: You copy code you dont understand from stackoverflow to make your code work.</h3>
+                      
+                        <button disabled ={fifthdisabled}  className="btn btn- True-btn" role="button" onClick={truthFunction5}>AUTOMATICALLY TRUE</button> <button className="btn btn-default False-btn" role="button" onClick ={WrongFunction5} disabled ={fifthdisabled} >LIARS SHOULD CLICK THIS </button>
                         <h1 className ="text-center" style ={{color:"white"}}>{Correct5}</h1>
                         <h1 className ="text-center" style ={{color:"white"}}>{wrong5}</h1>
                     </div>
@@ -330,12 +361,12 @@ const LikeCompo = () => {
                 <div className="row">
                 <div className="">
                     <div className="thumbnail" style= {{ backgroundColor: sixthcolor }}>
-                   
+                    <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                     <img src={Image6}alt="..."/>
                     <div className="caption">
-                        <h3> Question 6: You are learning to code because you really love to solve problems and not because of the money</h3>
+                        <h3> Question 6: You are learning to code because you really love to solve problems and not because of the money.</h3>
                         <h4>Hint: Remember your frustrated face when you cant find a simple bug and answer accordingly.</h4>
-                        <p><a href="#" className="btn btn- True-btn" role="button" onClick={WrongFunction6}>True</a> <a href="#" className="btn btn-default False-btn" role="button" onClick={truthFunction6}>False</a></p>
+                        <button href="#" className="btn btn- True-btn" role="button" onClick={WrongFunction6} disabled ={sixthdisabled} >True</button> <button href="#" className="btn btn-default False-btn" role="button" onClick={truthFunction6} disabled ={sixthdisabled} >False</button>
                         <h1 className ="text-center" style ={{color:"white"}}>{Correct6}</h1>
                         <h1 className ="text-center" style ={{color:"white"}}> {wrong6}  </h1>
                     </div>
@@ -348,22 +379,23 @@ const LikeCompo = () => {
                 <div className="row">
                 <div className="">
                     <div className="thumbnail" style= {{ backgroundColor: seventhcolor }}>
-                   
+                    <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                     <img src={Image7}/>
                     <div className="caption">
                         <h3>Question 7: You decided to learn how to code because you thought you will be become a hacker but you ended becoming at expert at copying and pasting. </h3>
                         <p></p>
-                        <p><a href="#" className="btn btn- True-btn" role="button" onClick={truthFunction7}>True</a> <a href="#" className="btn btn-default False-btn" role="button" onClick={WrongFunction7}>False</a></p>
+                        <button href="#" className="btn btn- True-btn" role="button" onClick={truthFunction7} disabled ={seventhdisabled} >True</button> <button className="btn btn-default False-btn" role="button" onClick={WrongFunction7} disabled ={seventhdisabled} >False</button>
                         <h1 className ="text-center" style ={{color:"white"}}   >{Correct7}</h1>
                         <h1 className ="text-center" style ={{color:"white"}}> {wrong7}  </h1>
                     </div>
                     </div>
                 </div>
                 </div>
+                <h1 className ="text-center">YOUR FINAL IS SCORE: {score}/7</h1>
+                <h2 className = "text-center">REFRESH TO RESTART</h2>
                 </section>   
 
-                <h1 className ="text-center">YOUR IS SCORE: {score} / 7</h1>
-
+                
                
 
 

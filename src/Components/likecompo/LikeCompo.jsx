@@ -327,7 +327,7 @@ const LikeCompo = () => {
                     <h2 style = {{color:"black"}}>Current Score: {score}/7 </h2>
                     <img src={Image4} className ="Images"alt="..."/>
                     <div className="caption">
-                        <h3>Question 4: You watch an inidan on Youtube at least once a month.</h3>
+                        <h3>Question 4: You watch an indian on Youtube at least once a month.</h3>
                       
                         <button className="btn btn- True-btn" role="button"  onClick={truthFunction4} disabled ={fourthdisabled} >TRUE</button> <button href="#" className="btn btn-default False-btn" role="button" onClick={WrongFunction4} disabled ={fourthdisabled} >NEVER</button>
                         <h1 className ="text-center" style ={{color:"white"}}>{Correct4}</h1>

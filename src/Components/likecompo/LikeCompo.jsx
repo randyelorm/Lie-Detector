@@ -216,7 +216,7 @@ const LikeCompo = () => {
             setFifthColor(WrongColor)
             setWrongStack("A big liar just clicked this button.")
             setCorrectStack(" ")
-            
+            setScore (score - 1)
             event.preventDefault();
             setFifthDisabled (true) 
 

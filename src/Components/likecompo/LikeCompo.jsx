@@ -238,7 +238,7 @@ const LikeCompo = () => {
         // wrong7
         const WrongFunction7 = (event) =>{ 
             setSeventhColor(WrongColor)
-            setWrongHack("Okay then. Hack me now with HTML. I dare you!!!")
+            setWrongHack("Okay then. Hack me now with your HTML. I dare you!!!")
             setCorrectHack(" ")
             setScore (score - 1)
             event.preventDefault(); 

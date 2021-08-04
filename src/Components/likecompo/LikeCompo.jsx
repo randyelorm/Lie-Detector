@@ -255,11 +255,17 @@ const LikeCompo = () => {
     return (
     <div className ="everything"  >
 
-            <h1 class ="text-center">HELLO DEVELOPER, WELCOME</h1>
-                    <h2 class ="text-center">I DETECT <span style ={{color:"red"}}>LIES</span>  TOLD BY MOST DEVELOPERS.</h2>
-           <h3 className ="text-center">I will change the background color to <span className ="green">GREEN</span> and add 1 (+1) to your score when you answer correctly. </h3> 
-           <h3 className ="text-center"> and I will change the background color to <span className ="red">RED</span> and minus 1 (-1) from your score when you answer wrongly. Good Luck</h3>
-           <p className ="text-center">Refresh to Reset the page</p>
+
+
+
+
+
+
+            <h1 class ="text-center">HELLO DEVELOPER, LETS PLAY A GAME.</h1>
+                   
+           <h3 className ="text-center">If you answer honestly you earn <span className ="green"> (+1) </span> Point </h3> 
+           <h3 className ="text-center"> If you lie, I will deduct<span className ="red"> (-1) </span> point  from your score </h3>
+           <h4 className ="text-center">Have Fun, Don’t lie!! </h4>
 
         <section className= "like_box">
                         {/* Thumbnail 1 */}

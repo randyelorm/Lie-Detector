@@ -403,7 +403,12 @@ const LikeCompo = () => {
                 </section>   
 
                 
-                <a href="https://www.linkedin.com/posts/randy-davoh-820642171_so-jack-forge-played-my-game-thats-activity-6816876213898878976-e_6l" className = "fab fa-linkedin text-center" target = "_blank"> Post a Screen Shot of Your Score In the Comments</a> <br />
+            <a href="https://www.linkedin.com/posts/randy-davoh-820642171_so-jack-forge-played-my-game-thats-activity-6816876213898878976-e_6l" 
+              className = "fab fa-linkedin text-center" 
+              target = "_blank"> 
+               Post a ScreenShot of Your Score In the Comments.
+            </a>
+             <br />
                <a href = "https://www.linkedin.com/in/randy-davoh-820642171/" className =" footer-link text-center fab fa-linkedin" target = "_blank"> Built in React by Randy Davoh.</a> <br />
                <a href = "https://twitter.com/randydavoh" className =" footer-link text-center fab fa-twitter" target = "_blank">@randydavoh</a>
 
